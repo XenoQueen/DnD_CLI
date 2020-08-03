@@ -17,6 +17,29 @@ class CLI
     "\n"
   end
 
-  
+  def main_menu
+    puts "Choose an option:"
+    puts "1. Get Class list"
+    puts "2. Get Race list"
+    puts "3. Get Subclass list"
+    puts "4. Get Subrace list"
+    puts "5. Exit"
+
+    user_input = gets.chomp
+
+    if @user_input == "1"
+      get_class_list
+    elsif @user_input == "2"
+      get_race_list
+    elsif @user_input == "3"
+      get_subclass_list
+    elsif @user_input == "4"
+      get_subrace_list
+    elsif @user_input == "5"
+      exit
+    else
+      puts "Invalid input".colorize(:red)
+  end
+
 
 end
