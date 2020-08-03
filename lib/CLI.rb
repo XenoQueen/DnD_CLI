@@ -45,5 +45,15 @@ class CLI
     classes.each {|c| c.pretty_print}
   end
 
-  
+  def get_race_list
+    races = @api.fetch_race_list(@list)
+    races.each {|c| c.pretty_print}
+  end
+
+  def search_for_class_or_race
+    print "What class or race would you like to search for?"
+    input = gets.chomp
+    classes = @api.fetch_class_by_name(input)
+    classes.pretty_print
+  end
 end
