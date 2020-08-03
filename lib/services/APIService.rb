@@ -12,5 +12,15 @@ class APIService
     end
   end
 
+  def fetch_race_by_name(name)
+    uri = URI(BASE_URI + "?name=#{name}")
+    races = make_request(uri)
+    if races[0]
+      Races.new(races[0])
+    else
+      "Could not find a race with that name.".colorize(:red)
+    end
+  end
+
   
 end
