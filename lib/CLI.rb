@@ -18,12 +18,13 @@ class CLI
   end
 
   def main_menu
-    puts "Choose an option:"
+    puts "What would you like to do?"
     puts "1. Get Class list"
     puts "2. Get Race list"
-    puts "3. Get Subclass list"
-    puts "4. Get Subrace list"
-    puts "5. Exit"
+    #puts "3. Get Subclass list"
+    #puts "4. Get Subrace list"
+    puts "3. Search for specific class or race"
+    puts "4. Exit"
 
     user_input = gets.chomp
 
@@ -32,14 +33,17 @@ class CLI
     elsif @user_input == "2"
       get_race_list
     elsif @user_input == "3"
-      get_subclass_list
+      search_for_class_or_race
     elsif @user_input == "4"
-      get_subrace_list
-    elsif @user_input == "5"
       exit
     else
       puts "Invalid input".colorize(:red)
   end
 
+  def get_class_list
+    classes = @api.fetch_class_list(@list)
+    classes.each {|c| c.pretty_print}
+  end
 
+  
 end
