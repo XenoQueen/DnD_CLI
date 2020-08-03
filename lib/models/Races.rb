@@ -16,5 +16,20 @@ class Races
     @@all
   end
 
-  
+  def self.find_by_name(name)
+    @@all.find {|race| race.name.downcase == name.downcase}
+  end
+
+  def pretty_print
+    puts @name
+    puts "\n"
+    puts "Size:"
+    puts @size
+    puts "\n"
+    puts "Speed:"
+    puts @speed
+    puts "\n"
+    puts "Languages:"
+    puts @languages
+  end
 end
