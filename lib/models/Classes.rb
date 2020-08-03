@@ -16,5 +16,20 @@ class Classes
     @@all
   end
 
-  
+  def self.find_by_name(name)
+    @@all.find {|class| class.name.downcase == name.downcase}
+  end
+
+  def pretty_print
+    puts @name
+    puts "\n"
+    puts "Hit Die:"
+    puts @hit_die
+    puts "\n"
+    puts "Proficiencies:"
+    puts @proficiencies
+    puts "\n"
+    puts "Saving Throws:"
+    puts @saving_throws
+  end
 end
