@@ -12,4 +12,11 @@ class CLI
     puts "Goodbye!"
   end
 
+  def welcome
+    puts "Welcome to a Dungeons & Dragons 5E character repository!".colorize(:blue)
+    "\n"
+  end
+
+  
+
 end
