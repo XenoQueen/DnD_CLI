@@ -38,6 +38,7 @@ class CLI
       exit
     else
       puts "Invalid input".colorize(:red)
+    end
   end
 
   def get_class_list
