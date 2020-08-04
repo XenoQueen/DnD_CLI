@@ -17,7 +17,7 @@ class Classes
   end
 
   def self.find_by_name(name)
-    @@all.find {|class| class.name.downcase == name.downcase}
+    @@all.find { |classes| classes.name.downcase == name.downcase }
   end
 
   def pretty_print
