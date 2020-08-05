@@ -1,6 +1,6 @@
 class APIService
 
-  BASE_URI = "https://www.dnd5eapi.co/"
+  BASE_URI = "https://www.dnd5eapi.co/api/"
 
   def fetch_class_by_name(name)
     uri = URI(BASE_URI + "?name=#{name}")
