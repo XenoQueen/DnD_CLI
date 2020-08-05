@@ -13,18 +13,18 @@ class CLI
   end
 
   def welcome
-    puts "Welcome to a Dungeons & Dragons 5E character repository!".colorize(:blue)
+    puts "Welcome to a Dungeons & Dragons 5E character repository!".colorize(:yellow)
     "\n"
   end
 
   def main_menu
-    puts "What would you like to do?"
-    puts "1. Get Class list"
-    puts "2. Get Race list"
-    #puts "3. Get Subclass list"
-    #puts "4. Get Subrace list"
-    puts "3. Search for specific class or race"
-    puts "4. Exit"
+    puts "What would you like to do?".colorize(:green)
+    puts "1. Get Class list".colorize(:light_blue)
+    puts "2. Get Race list".colorize(:light_blue)
+    #puts "3. Get Subclass list".colorize(:light_blue)
+    #puts "4. Get Subrace list".colorize(:light_blue)
+    puts "3. Search for specific class or race".colorize(:light_blue)
+    puts "4. Exit".colorize(:light_blue)
 
     user_input = gets.chomp
 
