@@ -37,4 +37,9 @@ class APIService
       Races.new(races_data)
     end
   end
+
+  def make_request(uri)
+    response = Net::HTTP.get_response(uri)
+    JSON.parse(response.body)
+  end
 end
