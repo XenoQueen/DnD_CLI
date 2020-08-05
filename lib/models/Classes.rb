@@ -4,11 +4,11 @@ class Classes
 
   @@all = []
 
-  def initialize(class_data)
-    @name = class_data["name"]
-    @hit_die = class_data["hit_die"]
-    @proficiencies = class_data["proficiencies"]
-    @saving_throws = class_data["saving_throws"]
+  def initialize(classes_data)
+    @name = classes_data["name"]
+    @hit_die = classes_data["hit_die"]
+    @proficiencies = classes_data["proficiencies"]
+    @saving_throws = classes_data["saving_throws"]
     @@all << self
   end
 
