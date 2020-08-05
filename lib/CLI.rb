@@ -4,11 +4,12 @@ class CLI
     system("clear")
     @user_input = nil
     @api = APIService.new
-    @page = 1
     welcome
+
     until @user_input == "2"
       main_menu
     end
+
     puts "Goodbye!"
   end
 
@@ -19,8 +20,8 @@ class CLI
 
   def main_menu
     puts "What would you like to do?".colorize(:green)
-    puts "1. Get Class list".colorize(:light_blue)
-    puts "2. Get Race list".colorize(:light_blue)
+    puts "1. Get Classes list".colorize(:light_blue)
+    puts "2. Get Races list".colorize(:light_blue)
     #puts "3. Get Subclass list".colorize(:light_blue)
     #puts "4. Get Subrace list".colorize(:light_blue)
     puts "3. Search for specific class or race".colorize(:light_blue)
@@ -29,9 +30,9 @@ class CLI
     user_input = gets.chomp
 
     if @user_input == "1"
-      get_class_list
+      get_classes_list
     elsif @user_input == "2"
-      get_race_list
+      get_races_list
     elsif @user_input == "3"
       search_for_class_or_race
     elsif @user_input == "4"
@@ -41,13 +42,13 @@ class CLI
     end
   end
 
-  def get_class_list
-    classes = @api.fetch_class_list(@list)
+  def get_classes_list
+    classes = @api.fetch_classes_list(@list)
     classes.each {|c| c.pretty_print}
   end
 
-  def get_race_list
-    races = @api.fetch_race_list(@list)
+  def get_races_list
+    races = @api.fetch_races_list(@list)
     races.each {|c| c.pretty_print}
   end
 
