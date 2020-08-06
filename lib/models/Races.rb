@@ -5,7 +5,6 @@ class Races
   @@all = []
 
   def initialize(races_data)
-    puts races_data
     @name = races_data["name"]
     @size = races_data["size"]
     @speed = races_data["speed"]
