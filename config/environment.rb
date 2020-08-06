@@ -4,7 +4,6 @@ require "colorize"
 require "uri"
 require "net/http"
 require "json"
-require "pp"
 
 # Classes
 require_relative "../lib/models/Classes.rb"
