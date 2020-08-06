@@ -3,7 +3,7 @@ class APIService
   BASE_URI = "https://www.dnd5eapi.co/api/"
 
   def fetch_class_by_name(name)
-    uri = URI(BASE_URI + "?classes/name=#{name}")
+    uri = URI(BASE_URI + "?name=#{name}")
     classes = make_request(uri)
     if classes[0]
       Classes.new(classes[0])
@@ -13,7 +13,7 @@ class APIService
   end
 
   def fetch_race_by_name(name)
-    uri = URI(BASE_URI + "?races/name=#{name}")
+    uri = URI(BASE_URI + "?name=#{name}")
     races = make_request(uri)
     if races[0]
       Races.new(races[0])

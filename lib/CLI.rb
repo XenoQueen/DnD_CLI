@@ -27,7 +27,7 @@ class CLI
     puts "3. Search for specific class or race".colorize(:light_blue)
     puts "4. Exit".colorize(:light_blue)
 
-    user_input = gets.chomp
+    @user_input = gets.chomp
 
     if @user_input == "1"
       get_classes_list
@@ -38,7 +38,7 @@ class CLI
     elsif @user_input == "4"
       exit
     else
-      puts "Invalid input".colorize(:red)
+      puts "Invalid input: #{@user_input}".colorize(:red)
     end
   end
 
@@ -49,11 +49,11 @@ class CLI
 
   def get_races_list
     races = @api.fetch_races_list(@list)
-    races.each {|c| c.pretty_print}
+    races.each {|r| r.pretty_print}
   end
 
   def search_for_class_or_race
-    print "What class or race would you like to search for?"
+    print "What class or race would you like to search for?".colorize(:green)
     input = gets.chomp
     classes = @api.fetch_class_by_name(input)
     classes.pretty_print
