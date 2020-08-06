@@ -27,9 +27,9 @@ class Classes
     puts @hit_die
     puts "\n"
     puts "Proficiencies:"
-    puts @proficiencies
+    puts @proficiencies.map {|p| p["name"]}
     puts "\n"
     puts "Saving Throws:"
-    puts @saving_throws
+    puts @saving_throws.map {|s| s["name"]}
   end
 end

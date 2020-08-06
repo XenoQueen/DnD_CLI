@@ -6,7 +6,7 @@ class CLI
     @api = APIService.new
     welcome
 
-    until @user_input == "2"
+    until @user_input == "4"
       main_menu
     end
   end
@@ -43,22 +43,20 @@ class CLI
 
   def get_classes_list
     classes = @api.fetch_classes_list
-    classes.each {|c| c.pretty_print}
+    classes.each {|c| puts c.name}
   end
 
   def get_races_list
     races = @api.fetch_races_list(@list)
-    races.each {|r| r.pretty_print}
+    races.each {|r| puts r.name}
   end
 
   def search_for_class_or_race
     print "What class or race would you like to search for?".colorize(:green)
     input = gets.chomp
     classes = @api.fetch_class_by_name(input)
-
-    races = @api.fetch_race_by_name(input)
     begin
-      races.pretty_print
+      classes.pretty_print
     rescue
     end
   end
