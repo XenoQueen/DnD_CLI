@@ -43,7 +43,7 @@ class CLI
   end
 
   def get_classes_list
-    classes = @api.fetch_classes_list(@list)
+    classes = @api.fetch_classes_list
     classes.each {|c| c.pretty_print}
   end
 
@@ -56,8 +56,11 @@ class CLI
     print "What class or race would you like to search for?".colorize(:green)
     input = gets.chomp
     classes = @api.fetch_class_by_name(input)
-    pp(classes)
+
     races = @api.fetch_race_by_name(input)
-    pp(races)
+    begin
+      races.pretty_print
+    rescue
+    end
   end
 end

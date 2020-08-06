@@ -5,7 +5,12 @@ class Classes
   @@all = []
 
   def initialize(classes_data)
-    classes_data = URI(BASE_URI + "classes")
+    puts classes_data
+    @name = classes_data["name"]
+    @hit_die = classes_data["hit_die"]
+    @proficiencies = classes_data["proficiencies"]
+    @saving_throws = classes_data["saving_throws"]
+    @@all << self
   end
 
   def self.all
@@ -14,11 +19,6 @@ class Classes
 
   def self.find_by_name(name)
     @@all.find { |classes| classes.name.downcase == name.downcase }
-    @name = classes_data["name"]
-    @hit_die = classes_data["hit_die"]
-    @proficiencies = classes_data["proficiencies"]
-    @saving_throws = classes_data["saving_throws"]
-    @@all << self
   end
 
   def pretty_print
