@@ -9,8 +9,6 @@ class CLI
     until @user_input == "2"
       main_menu
     end
-
-    puts "Goodbye!"
   end
 
   def welcome
@@ -36,6 +34,7 @@ class CLI
     elsif @user_input == "3"
       search_for_class_or_race
     elsif @user_input == "4"
+      puts "Fair travels adventurer!".colorize(:green)
       exit
     else
       puts "Invalid input: #{@user_input}".colorize(:red)

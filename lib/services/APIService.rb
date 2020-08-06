@@ -5,8 +5,8 @@ class APIService
   def fetch_class_by_name(name)
     uri = URI(BASE_URI + "classes/#{name}")
     classes = make_request(uri)
-    if classes[0]
-      Classes.new(classes[0])
+    if classes["name"]
+      Classes.new(classes)
     else
       fetch_race_by_name(name)
     end

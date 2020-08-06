@@ -5,7 +5,6 @@ class Classes
   @@all = []
 
   def initialize(classes_data)
-    puts classes_data
     @name = classes_data["name"]
     @hit_die = classes_data["hit_die"]
     @proficiencies = classes_data["proficiencies"]
