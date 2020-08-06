@@ -5,11 +5,7 @@ class Races
   @@all = []
 
   def initialize(races_data)
-    @name = races_data["name"]
-    @size = races_data["size"]
-    @speed = races_data["speed"]
-    @languages = races_data["languages"]
-    @@all << self
+    races_data = URI(BASE_URI + "races")
   end
 
   def self.all
@@ -18,6 +14,11 @@ class Races
 
   def self.find_by_name(name)
     @@all.find {|races| races.name.downcase == name.downcase}
+    @name = races_data["name"]
+    @size = races_data["size"]
+    @speed = races_data["speed"]
+    @languages = races_data["languages"]
+    @@all << self
   end
 
   def pretty_print

@@ -56,8 +56,8 @@ class CLI
     print "What class or race would you like to search for?".colorize(:green)
     input = gets.chomp
     classes = @api.fetch_class_by_name(input)
-    classes.pretty_print
+    pp(classes)
     races = @api.fetch_race_by_name(input)
-    races.pretty_print
+    pp(races)
   end
 end
