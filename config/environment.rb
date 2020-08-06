@@ -1,5 +1,5 @@
 # Gems
-#require "pry"
+require "pry"
 require "colorize"
 require "uri"
 require "net/http"
