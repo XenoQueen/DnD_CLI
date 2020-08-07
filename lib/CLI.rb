@@ -41,12 +41,12 @@ class CLI
 
   def get_classes_list
     classes = @api.fetch_classes_list
-    classes.each {|c| puts c.name}
+    classes.each {|c| puts c}
   end
 
   def get_races_list
     races = @api.fetch_races_list(@list)
-    races.each {|r| puts r.name}
+    races.each {|r| puts r}
   end
 
   def search_for_class_or_race
@@ -56,6 +56,7 @@ class CLI
     begin
       classes.pretty_print
     rescue
+      puts "Could not find a class or race with that name.".colorize(:red)
     end
   end
 end

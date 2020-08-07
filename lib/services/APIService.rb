@@ -15,9 +15,7 @@ class APIService
   def fetch_race_by_name(name)
     uri = URI(BASE_URI + "races/#{name}")
     race = make_request(uri)
-    if race ["error"]
-      puts "Could not find a class or race with that name.".colorize(:red)
-    else
+    unless race ["error"]
       Races.new(race)
     end
   end
@@ -26,7 +24,7 @@ class APIService
     uri = URI(BASE_URI + "classes")
     classes = make_request(uri)
     classes_instances = classes["results"].map do |classes_data|
-      Classes.new(classes_data)
+      classes_data["name"]
     end
   end
 
@@ -34,7 +32,7 @@ class APIService
     uri = URI(BASE_URI + "races")
     races = make_request(uri)
     races_instances = races["results"].map do |races_data|
-      Races.new(races_data)
+      races_data["name"]
     end
   end
 
