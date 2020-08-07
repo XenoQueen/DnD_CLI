@@ -21,15 +21,15 @@ class Races
   end
 
   def pretty_print
-    puts @name
+    puts @name.colorize(:cyan)
     puts "\n"
-    puts "Size:"
+    puts "Size:".colorize(:yellow)
     puts @size
     puts "\n"
-    puts "Speed:"
+    puts "Speed:".colorize(:yellow)
     puts @speed
     puts "\n"
-    puts "Languages:"
+    puts "Languages:".colorize(:yellow)
     puts @languages.map {|l| l["name"]}
   end
 end

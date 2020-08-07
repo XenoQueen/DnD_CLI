@@ -21,15 +21,15 @@ class Classes
   end
 
   def pretty_print
-    puts @name
+    puts @name.colorize(:cyan)
     puts "\n"
-    puts "Hit Die:"
+    puts "Hit Die:".colorize(:yellow)
     puts @hit_die
     puts "\n"
-    puts "Proficiencies:"
+    puts "Proficiencies:".colorize(:yellow)
     puts @proficiencies.map {|p| p["name"]}
     puts "\n"
-    puts "Saving Throws:"
+    puts "Saving Throws:".colorize(:yellow)
     puts @saving_throws.map {|s| s["name"]}
   end
 end
