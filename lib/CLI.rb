@@ -20,8 +20,6 @@ class CLI
     puts "What would you like to do?".colorize(:green)
     puts "1. Get Classes list".colorize(:light_blue)
     puts "2. Get Races list".colorize(:light_blue)
-    #puts "3. Get Subclass list".colorize(:light_blue)
-    #puts "4. Get Subrace list".colorize(:light_blue)
     puts "3. Search for specific class or race".colorize(:light_blue)
     puts "4. Exit".colorize(:light_blue)
 
