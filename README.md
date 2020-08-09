@@ -36,4 +36,5 @@ Bug reports and pull requests welcome at https://github.com/XenoQueen/DnD_CLI
 
 LICENSE
 
-This gem is available as open source under MIT License terms.
+This gem is available as open source under MIT License terms:
+https://opensource.org/licenses/MIT
