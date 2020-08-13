@@ -42,11 +42,13 @@ class CLI
   def get_classes_list
     classes = @api.fetch_classes_list
     classes.each {|c| puts c}
+    sort_by_hit_die
   end
 
   def get_races_list
     races = @api.fetch_races_list(@list)
     races.each {|r| puts r}
+    sort_by_size
   end
 
   def search_for_class_or_race

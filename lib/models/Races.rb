@@ -20,6 +20,10 @@ class Races
     @@all.find {|races| races.name.downcase == name.downcase}
   end
 
+  def self.sort_by_size(size)
+    @@all.sort_by {|races_data| races_data.size}
+  end
+
   def pretty_print
     puts @name.colorize(:cyan)
     puts "\n"

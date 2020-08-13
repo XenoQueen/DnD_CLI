@@ -20,6 +20,10 @@ class Classes
     @@all.find { |classes| classes.name.downcase == name.downcase }
   end
 
+  def self.sort_by_hit_die(hit_die)
+    @@all.sort_by do {|classes_data| classes_data.hit_die}
+  end
+
   def pretty_print
     puts @name.colorize(:cyan)
     puts "\n"
