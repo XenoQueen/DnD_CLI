@@ -21,7 +21,7 @@ class Classes
   end
 
   def self.sort_by_hit_die(hit_die)
-    @@all.sort_by do {|classes_data| classes_data.hit_die}
+    classes_data.sort_by do {|classes_data| classes_data.hit_die}
   end
 
   def pretty_print

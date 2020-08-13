@@ -21,7 +21,7 @@ class Races
   end
 
   def self.sort_by_size(size)
-    @@all.sort_by {|races_data| races_data.size}
+    races_data.sort_by {|races_data| races_data.size}
   end
 
   def pretty_print
