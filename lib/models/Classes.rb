@@ -4,12 +4,15 @@ class Classes
 
   @@all = []
 
-  def initialize(classes_data)
-    @name = classes_data["name"]
+  def initialize(name)
+    @name = name
+    @@all << self
+  end
+
+  def add_details(classes_data)
     @hit_die = classes_data["hit_die"]
     @proficiencies = classes_data["proficiencies"]
     @saving_throws = classes_data["saving_throws"]
-    @@all << self
   end
 
   def self.all
@@ -20,9 +23,9 @@ class Classes
     @@all.find { |classes| classes.name.downcase == name.downcase }
   end
 
-  def self.sort_by_hit_die(hit_die)
-    classes_data.sort_by do {|classes_data| classes_data.hit_die}
-  end
+  #def self.sort_by_hit_die(hit_die)
+    #classes_data.sort_by {|classes_data| classes_data.@hit_die}
+  #end
 
   def pretty_print
     puts @name.colorize(:cyan)

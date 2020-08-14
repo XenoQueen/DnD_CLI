@@ -4,6 +4,7 @@ class CLI
     system("clear")
     @user_input = nil
     @api = APIService.new
+    @api.fetch_classes_list
     welcome
 
     until @user_input == "4"
@@ -40,15 +41,15 @@ class CLI
   end
 
   def get_classes_list
-    classes = @api.fetch_classes_list
-    classes.each {|c| puts c}
-    sort_by_hit_die
+
+    Classes.all.each {|c| puts c.name}
+    #sort_by_hit_die
   end
 
   def get_races_list
     races = @api.fetch_races_list(@list)
     races.each {|r| puts r}
-    sort_by_size
+    #sort_by_size
   end
 
   def search_for_class_or_race
