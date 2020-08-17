@@ -5,8 +5,11 @@ class APIService
   def fetch_class_by_name(name)
     uri = URI(BASE_URI + "classes/#{name}")
     classes = make_request(uri)
+    puts "I'm working here"
     if classes["name"]
-      Classes.new(classes)
+      found_class = Classes.find_by_name(name)
+      found_class.add_details(classes)
+      found_class
     else
       fetch_race_by_name(name)
     end

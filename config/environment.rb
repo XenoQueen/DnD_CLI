@@ -4,6 +4,7 @@ require "colorize"
 require "uri"
 require "net/http"
 require "json"
+require "byebug"
 
 # Classes
 require_relative "../lib/models/Classes.rb"

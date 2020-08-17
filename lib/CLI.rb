@@ -55,7 +55,7 @@ class CLI
   def search_for_class_or_race
     print "What class or race would you like to search for?".colorize(:green)
     input = gets.chomp
-    classes = @api.fetch_class_by_name(input)
+    classes = Classes.find_or_create_by_name(input)
     begin
       classes.pretty_print
     rescue
